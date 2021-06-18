@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Awesome App</string>
+    <string name="grid">grid</string>
+    <string name="list">list</string>
+    <string name="no_data">No Data</string>
+    <string name="none">-</string>
+    <string name="check_internet">Please check your internet connection and swipe to refresh data</string>
+    <string name="detail">Detail</string>
+</resources>
