@@ -4,7 +4,7 @@
     <string name="list">list</string>
     <string name="no_data">No Data</string>
     <string name="none">-</string>
-    <string name="check_internet">Please check your internet connection and swipe to refresh data</string>
+    <string name="check_internet">Please check your internet connection and pull to refresh data</string>
     <string name="detail">Detail</string>
     <string name="refresh_data">Pull to refresh data</string>
 </resources>
