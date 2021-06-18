@@ -39,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
+                android:theme="@style/ToolbarTheme"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:title="@string/app_name" />
 

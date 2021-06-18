@@ -2,11 +2,13 @@ package com.example.awesomeapp.view;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
     @BindView(R.id.toolbar)
     MaterialToolbar toolbar;
+    @BindView(R.id.desc)
+    TextView description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,9 +214,11 @@ public class MainActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         swipeRefresh.setRefreshing(false);
                         recyclerView.setVisibility(View.GONE);
+                        description.setText(R.string.refresh_data);
                         rlEmpty.setVisibility(View.VISIBLE);
                     }
                 } catch (Exception e) {
+                    progressBar.setVisibility(View.GONE);
                     swipeRefresh.setRefreshing(false);
                     recyclerView.setVisibility(View.GONE);
                     rlEmpty.setVisibility(View.VISIBLE);
@@ -286,41 +292,41 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    boolean refresh = false;
+//    boolean refresh = false;
 
     @Override
     public void onResume() {
         super.onResume();
-        if (refresh) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    checkInternet();
-                    currentPage = PAGE_START;
-                    isLastPage = false;
-                    setUI(0);
-                }
-            }, 1000);
-        }
+//        if (refresh) {
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    checkInternet();
+//                    currentPage = PAGE_START;
+//                    isLastPage = false;
+//                    setUI(0);
+//                }
+//            }, 1000);
+//        }
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        refresh = true;
+//        refresh = true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_grid:
-//                checkInternet();
+                checkInternet();
                 currentPage = PAGE_START;
                 isLastPage = false;
                 setUI(0);
                 return true;
             case R.id.action_list:
-//                checkInternet();
+                checkInternet();
                 currentPage = PAGE_START;
                 isLastPage = false;
                 setUI(1);

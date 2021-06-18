@@ -62,7 +62,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     public void setUI() {
         back.setOnClickListener(this);
         try {
-            titleText.setText("Detail "+name);
+            titleText.setText(R.string.detail+" "+name);
             Picasso.get().load(image).into(imageView);
             nameText.setText(name);
             stringUrl.setText(url);
